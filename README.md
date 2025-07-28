@@ -33,5 +33,5 @@ Bu proje, klasik **Taş - Kağıt - Makas** oyununu modern bir arayüz ile web �
 ---
 
 **🖼️ Ekran Görüntüsü**
-![Ana Ekran](photo/MainPage.jpg)
-![Kazanma Ekranı](photo/WinPage.jpg)
+![Ana Ekran](Photo/MainPage.jpg)
+![Kazanma Ekranı](Photo/WinPage.jpg)
