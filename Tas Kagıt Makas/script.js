@@ -28,6 +28,8 @@ let computerChoice = '';
 function resetSelected() {
   allGameIcons.forEach((icon) => {
     icon.classList.remove('selected');
+    stopConfetti();
+    removeConfetti();
   });
 }
 function computerRandomChoice() {
@@ -57,6 +59,18 @@ function displayComputerChoice() {
       break;
   }
 }
+
+function resetAll() {
+  playerScoreNumber = 0;
+  computerScoreNumber = 0;
+  playerScore.textContent = playerScoreNumber;
+  computerScore.textContent = computerScoreNumber;
+  playerTurn.textContent = '';
+  computerTurn.textContent = '';
+  resultText.textContent = '';
+  resetSelected();
+}
+
 function updateScore(playerChoice) {
   if (playerChoice === computerChoice) {
     resultText.textContent = 'Berabere.';
@@ -66,11 +80,12 @@ function updateScore(playerChoice) {
     console.log(choice.win.indexOf(computerChoice));
     if (choice.win.indexOf(computerChoice) === 0) {
       playerScoreNumber++;
-      resultText.textContent = 'Can Boz kazandı.';
+      resultText.textContent = 'İlyas kazandı.';
       playerScore.textContent = playerScoreNumber;
+      startConfetti();
     } else {
       computerScoreNumber++;
-      resultText.textContent = 'Osman kazandı.';
+      resultText.textContent = 'Nuri kazandı.';
       computerScore.textContent = computerScoreNumber;
     }
   }
@@ -84,6 +99,7 @@ function checkResult(playerChoice) {
 }
 
 function select(playerChoice) {
+
   checkResult(playerChoice);
 
   switch (playerChoice) {
